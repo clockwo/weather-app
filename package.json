@@ -1,0 +1,25 @@
+{
+  "name": "bundler",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "browserslist": [
+    "cover 99.5%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "postcss": "^8.4.30",
+    "prettier": "3.0.3",
+    "sass": "^1.67.0",
+    "vite": "^4.4.5"
+  }
+}
