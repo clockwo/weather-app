@@ -1,13 +1,26 @@
 const apiKey = 'EN20l0Elyu5VVeoBSXsvwHRDyIqqEiOj';
 
-export default async function getImage() {
-  const response = await fetch(
-    `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=cloudy_weather`,
-    { mode: 'cors' }
-  );
-  const data = await response.json();
+// TODO: Make file for fetch data Giphy or Weather
+// TODO: Get data from WeatherApi -> Get str of current weather -> Get img by str from giphy
+async function fetchGiphyImage(searchTerm) {
+  try {
+    const response = await fetch(
+      `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${searchTerm}`,
+      { mode: 'cors' }
+    );
 
-  return data.data.images.original.url;
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error Giphy API:', error);
+    return null;
+  }
 }
 
-//  `https://api.giphy.com/v1/gifs/translate?api_key=EN20l0Elyu5VVeoBSXsvwHRDyIqqEiOj&s=${searchItem}`,
+export default async function getImage(searchTerm) {
+  const data = await fetchGiphyImage(searchTerm);
+  return data ? data.data.images.original.url : null;
+}
