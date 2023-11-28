@@ -9,6 +9,26 @@
   <body class="body">
     <div class="background" data-js-background></div>
 
+    <section class="section">
+      <div class="container">
+        <div class="weather-section">
+          <article class="weather-card">
+            <header>
+              <h1 class="weather-location" data-js-location></h1>
+            </header>
+            <p class="current-temperature" data-js-temperature></p>
+            <p class="condition" data-js-condition></p>
+            <div class="temperature-range">
+              <p class="temperature-max" data-js-max></p>
+              <p class="temperature-min" data-js-min></p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="container hours" data-js-hours-container></div>
+    </section>
+
     <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>

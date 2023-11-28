@@ -1,0 +1,28 @@
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .weather-location {
+    font-size: 26px;
+  }
+
+  .current-temperature {
+    font-size: 40px;
+    line-height: 78%;
+  }
+
+  .temperature-range {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.hour-card {
+  display: flex;
+  min-width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

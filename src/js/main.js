@@ -1,4 +1,4 @@
 import '../scss/main.scss';
-import setBackground from './render';
+import init from './render';
 
-setBackground();
+init();
