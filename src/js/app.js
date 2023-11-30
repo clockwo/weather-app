@@ -1,7 +1,5 @@
 import getWeatherData from './fetch-data';
 
-const DEFAULT_LOCATE = 'Saint-Petersburg';
-
 export default class App {
   constructor() {
     this.weatherInfo = null;
@@ -13,6 +11,28 @@ export default class App {
 
   getLocation() {
     return this.weatherInfo.location.name;
+  }
+
+  getDays() {
+    return this.weatherInfo.forecast.forecastday;
+  }
+
+  getLowestTemperatureOf10Days() {
+    const days = this.weatherInfo.forecast.forecastday;
+    const minTemp = days.reduce(
+      (min, b) => Math.min(min, b.day.mintemp_c),
+      days[0].day.mintemp_c
+    );
+    return minTemp;
+  }
+
+  getHighestTemperatureOf10Days() {
+    const days = this.weatherInfo.forecast.forecastday;
+    const maxTemp = days.reduce(
+      (max, b) => Math.max(max, b.day.maxtemp_c),
+      days[0].day.maxtemp_c
+    );
+    return maxTemp;
   }
 
   getCurrentDayTemperature() {
@@ -35,7 +55,7 @@ export default class App {
     return this.weatherInfo.forecast.forecastday[0].hour;
   }
 
-  async init(locate = DEFAULT_LOCATE) {
+  async init(locate) {
     this.weatherInfo = await getWeatherData(locate);
   }
 }

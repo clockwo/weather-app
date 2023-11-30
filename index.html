@@ -26,7 +26,31 @@
         </div>
       </div>
 
-      <div class="container hours" data-js-hours-container></div>
+      <div class="container hourly-forecast">
+        <h2 class="title">hourly forecast</h2>
+        <div class="hours" data-js-hours-container></div>
+      </div>
+
+      <div class="container day-forecast">
+        <h2 class="title">10-day forecast</h2>
+        <div class="days" data-js-days-container></div>
+      </div>
+
+      <div class="container search">
+        <label for="search"></label>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Saint-Petersburg"
+          data-js-input
+        />
+        <button type="submit" data-js-submit-button>Submit</button>
+      </div>
+
+      <p class="error-message" data-js-error>
+        You've got an error!<br />Rewrite city name!<br />Loaded default city!
+      </p>
     </section>
 
     <script type="module" src="./src/js/main.js"></script>

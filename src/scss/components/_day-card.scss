@@ -25,4 +25,59 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  .icon {
+    width: 100%;
+    max-width: 32px;
+    aspect-ratio: 1/1;
+  }
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 300px;
+  overflow-y: auto;
+
+  .day {
+    display: grid;
+    grid-template-columns: 2.5rem 3rem 1fr;
+    gap: 0.5rem;
+    align-items: center;
+
+    &:not(:last-child) {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.302);
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      max-width: 3rem;
+    }
+
+    .temp-scale {
+      display: grid;
+      grid-template-columns: 1fr 5fr 1fr;
+      gap: 0.4rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .line {
+        position: relative;
+        height: 3px;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        &::before {
+          content: '';
+          position: absolute;
+          height: 3px;
+          background-color: rgb(79, 79, 250);
+          width: var(--width);
+          margin-left: var(--margin-left);
+        }
+      }
+    }
+  }
 }

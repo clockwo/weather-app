@@ -19,24 +19,83 @@
 
 .section {
   display: flex;
+
+  width: min(calc(100vw - 2rem), 30rem);
+  margin-inline: auto;
+  position: relative;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
   padding-top: 2rem;
   z-index: 1;
   max-height: 100vh;
 }
 
 .container {
-  width: min(calc(100vw - 2rem), 75rem);
+  width: 100%;
   margin-inline: auto;
   background-color: rgba(255, 255, 255, 0.09);
   color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
 
-  &.hours {
-    display: flex;
+  &.hourly-forecast,
+  &.day-forecast {
     padding: 0.5rem;
-    overflow-x: auto;
-    gap: 1rem;
+
+    .title {
+      text-transform: uppercase;
+      font-size: 14px;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.302);
+
+      padding-bottom: 0.3em;
+      margin-bottom: 0.3em;
+    }
+  }
+}
+
+.hours {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.container {
+  &.search {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    input {
+      width: 100%;
+    }
+
+    button {
+      width: 50%;
+      padding: 0.3rem 1rem;
+      border-radius: 8px;
+    }
+  }
+}
+
+.error-message {
+  position: absolute;
+  width: 100%;
+
+  top: 0;
+  transform: translateY(-100%);
+
+  text-align: center;
+  font-size: 1.5;
+  color: #fff;
+  background-color: rgba(255, 0, 0, 0.762);
+  transition: transform 1s ease-in-out;
+  transition: top 1s ease-in-out;
+
+  &.show {
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
