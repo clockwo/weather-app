@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Vite Template</title>
+    <script type="module" crossorigin src="./assets/index-9f3d6728.js"></script>
+    <link rel="stylesheet" href="./assets/index-55456a00.css">
+  </head>
+
+  <body class="body">
+    <div class="background" data-js-background></div>
+
+    <section class="section">
+      <div class="container">
+        <div class="weather-section">
+          <article class="weather-card">
+            <header>
+              <h1 class="weather-location" data-js-location></h1>
+            </header>
+            <p class="current-temperature" data-js-temperature></p>
+            <p class="condition" data-js-condition></p>
+            <div class="temperature-range">
+              <p class="temperature-max" data-js-max></p>
+              <p class="temperature-min" data-js-min></p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="container hourly-forecast">
+        <h2 class="title">hourly forecast</h2>
+        <div class="hours" data-js-hours-container></div>
+      </div>
+
+      <div class="container day-forecast">
+        <h2 class="title">10-day forecast</h2>
+        <div class="days" data-js-days-container></div>
+      </div>
+
+      <div class="container search">
+        <label for="search"></label>
+        <input
+          type="text"
+          id="search"
+          name="search"
+          placeholder="Saint-Petersburg"
+          data-js-input
+        />
+        <button type="submit" data-js-submit-button>Submit</button>
+      </div>
+
+      <p class="error-message" data-js-error>
+        You've got an error!<br />Rewrite city name!<br />Loaded default city!
+      </p>
+    </section>
+
+    
+  </body>
+</html>
